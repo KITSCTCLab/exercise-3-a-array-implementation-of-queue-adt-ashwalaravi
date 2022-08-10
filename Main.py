@@ -149,8 +149,8 @@ if self.stack.pop_character(index) == self.queue.dequeue_character(index):
     return 1
 else:
     return "palindrome is false"
-#
-    Write the necessary logic
+
+#    Write the necessary logic
 
 
 # finally print whether string text is palindrome or not.
