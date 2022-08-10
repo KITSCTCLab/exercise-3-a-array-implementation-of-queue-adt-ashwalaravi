@@ -106,6 +106,7 @@ class Solution:
             self.stack.pop()
             self.top-=1
             
+            
     def dequeue_character(self):
         """
         Do dequeue operation if the queue is not empty.
@@ -114,8 +115,8 @@ class Solution:
         """
         # Write your code here
         if not self.is_queue_empty():
-            self.queue.pop()
             self.front +=1
+        return self.queue[self.front - 1]
             
             
 
@@ -131,13 +132,16 @@ solution = Solution(length_of_text)
 
 # push/enqueue all the characters of string text to stack
 for index in range(length_of_text):
-    self.stack.push_character(index)
-    self.queue.enqueue_character(index)
+    solution.push_character(text[index])
+    solution.enqueue_character(text[index])
     
         
  
 
 is_palindrome = True
+for index in range(length_of_text):
+    if solution.pop_character() != solution.dequeue_character():
+        is_palindrome = False
 
 '''
 pop the top character from stack
@@ -145,10 +149,7 @@ dequeue the first character from queue
 compare both characters
 If the comparison fails, set is_palindrome as False.
 '''
-if self.stack.pop_character(index) == self.queue.dequeue_character(index):
-    return 1
-else:
-    return "palindrome is false"
+
 
 #    Write the necessary logic
 
