@@ -42,7 +42,7 @@ class Solution:
           True if it is empty, else returns False.
         """
         # Write your code here
-        if self.front == -1 and self.rear == -1:
+        if self.front == -1 or self.front >self.rear:
             return 1
         else:
             return 0
@@ -91,8 +91,10 @@ class Solution:
         """
         # Write your code here
         if not self.is_queue_full():
-            self.rear+=1
-            self.queue.append(character)
+            if self.front == -1:
+                self.front = 0
+        self.rear+=1
+        self.queue.append(character)
             
 
     def pop_character(self):
@@ -103,9 +105,8 @@ class Solution:
         """
         # Write your code here
         if not self.is_stack_empty():
-            self.stack.pop()
             self.top-=1
-            
+        return self.stack.pop(self.top + 1)
             
     def dequeue_character(self):
         """
